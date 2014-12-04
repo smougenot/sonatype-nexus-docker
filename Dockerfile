@@ -6,7 +6,7 @@ RUN apt-get update &&\
 
 RUN cd /usr/local && \
     wget -qO- http://download.sonatype.com/nexus/oss/nexus-2.11.0-02-bundle.tar.gz | tar xz && \
-    ln -s nexus-2.10.0-02 nexus && \
+    ln -s nexus-2.11.0-02 nexus && \
     rm -rf /usr/local/sonatype-work/nexus && \
     ln -s /nexus /usr/local/sonatype-work/nexus
 
