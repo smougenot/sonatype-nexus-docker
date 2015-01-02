@@ -9,3 +9,6 @@ Volume: /nexus
 Environment variables:
 
 * CONTEXT_PATH (default /nexus)
+
+Usage:
+docker run --name nexus -d -p 80:8081 -v /opt/nexus:/nexus smougenot/sonatype-nexus:2.11.1
