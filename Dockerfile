@@ -1,12 +1,13 @@
-FROM ubuntu:trusty
+FROM centos:centos7
 
-RUN apt-get update &&\
-    apt-get install -y default-jre && \
-    apt-get install -y wget
+RUN yum install -y java-1.7.0-openjdk-headless.x86_64 wget tar &&\
+    yum clean all
 
+ENV nexus_version 2.11.0-02
+	
 RUN cd /usr/local && \
-    wget -qO- http://download.sonatype.com/nexus/oss/nexus-2.11.0-02-bundle.tar.gz | tar xz && \
-    ln -s nexus-2.11.0-02 nexus && \
+    wget -qO- "http://download.sonatype.com/nexus/oss/nexus-${nexus_version}-bundle.tar.gz" | tar xz && \
+    ln -s "nexus-${nexus_version}" nexus && \
     rm -rf /usr/local/sonatype-work/nexus && \
     ln -s /nexus /usr/local/sonatype-work/nexus
 
