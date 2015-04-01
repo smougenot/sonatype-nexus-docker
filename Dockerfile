@@ -3,7 +3,7 @@ FROM centos:centos7
 RUN yum install -y java-1.7.0-openjdk-headless.x86_64 wget tar &&\
     yum clean all
 
-ENV nexus_version 2.11.2-03
+ENV nexus_version 2.11.2-06
 	
 RUN cd /usr/local && \
     wget -qO- "http://download.sonatype.com/nexus/oss/nexus-${nexus_version}-bundle.tar.gz" | tar xz && \
